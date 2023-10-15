@@ -11,7 +11,31 @@ namespace parcial1
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (todoCB.Checked == true)
+            {
+                denunciasDG.DataSourceID = SqlDataSourceDenunciasTotal.ID;
+                SqlDataSourceDenunciasTotal.Select(DataSourceSelectArguments.Empty);
+            }
+            else
+            {
+                denunciasDG.DataSourceID = SqlDataSourceDenuncias.ID;
+                SqlDataSourceDenuncias.Select(DataSourceSelectArguments.Empty);
+            }
+        }
 
+        //Todas las Denuncias
+        protected void todoCB_CheckedChanged(object sender, EventArgs e)
+        {
+            if (todoCB.Checked == true)
+            {
+                denunciasDG.DataSourceID = SqlDataSourceDenunciasTotal.ID;
+                SqlDataSourceDenunciasTotal.Select(DataSourceSelectArguments.Empty);
+            }
+            else
+            {
+                denunciasDG.DataSourceID = SqlDataSourceDenuncias.ID;
+                SqlDataSourceDenuncias.Select(DataSourceSelectArguments.Empty);
+            }
         }
     }
 }

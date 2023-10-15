@@ -32,7 +32,7 @@
             <br />
             <br />
         </div>
-        <asp:SqlDataSource ID="SqlDataSourceCategorias" runat="server" ConnectionString="<%$ ConnectionStrings:IssdTP42023ConnectionString %>" DeleteCommand="DELETE FROM DenunciaCategorias WHERE (idDenunciaCategoria = @idDenunciaCategoria)" InsertCommand="INSERT INTO DenunciaCategorias(nombre) VALUES (@nombre)" SelectCommand="SELECT idDenunciaCategoria, nombre FROM DenunciaCategorias ORDER BY nombre DESC" UpdateCommand="UPDATE DenunciaCategorias SET nombre = @nombre WHERE (idDenunciaCategoria = @idDenunciaCategoria)">
+        <asp:SqlDataSource ID="SqlDataSourceCategorias" runat="server" ConnectionString="<%$ ConnectionStrings:IssdTP42023ConnectionString %>" DeleteCommand="DELETE FROM DenunciaCategorias WHERE (idDenunciaCategoria = @idDenunciaCategoria)" InsertCommand="INSERT INTO DenunciaCategorias(nombre) VALUES (@nombre)" SelectCommand="SELECT idDenunciaCategoria, nombre FROM DenunciaCategorias ORDER BY nombre" UpdateCommand="UPDATE DenunciaCategorias SET nombre = @nombre WHERE (idDenunciaCategoria = @idDenunciaCategoria)">
             <DeleteParameters>
                 <asp:ControlParameter ControlID="categoriasLB" Name="idDenunciaCategoria" PropertyName="SelectedValue" />
             </DeleteParameters>

@@ -15,6 +15,8 @@
             <asp:DropDownList ID="categoriaDDL" runat="server" DataSourceID="SqlDataSourceCategorias" DataTextField="nombre" DataValueField="idDenunciaCategoria" Height="16px" Width="332px" AutoPostBack="True">
             </asp:DropDownList>
             <br />
+            <asp:CheckBox ID="todoCB" runat="server" AutoPostBack="True" OnCheckedChanged="todoCB_CheckedChanged" Text="Mostrar todas las Denuncias" />
+            <br />
             <br />
             <asp:Label ID="Label2" runat="server" Text="Denuncias:"></asp:Label>
             <asp:GridView ID="denunciasDG" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSourceDenuncias" Width="605px">
@@ -34,6 +36,8 @@
             <SelectParameters>
                 <asp:ControlParameter ControlID="categoriaDDL" Name="idDenunciaCategoria" PropertyName="SelectedValue" />
             </SelectParameters>
+        </asp:SqlDataSource>
+        <asp:SqlDataSource ID="SqlDataSourceDenunciasTotal" runat="server" ConnectionString="<%$ ConnectionStrings:IssdTP42023ConnectionString %>" SelectCommand="SELECT DenunciaCategorias.nombre, Denuncias.texto FROM Denuncias INNER JOIN DenunciaCategorias ON Denuncias.idDenunciaCategoria = DenunciaCategorias.idDenunciaCategoria ORDER BY DenunciaCategorias.nombre">
         </asp:SqlDataSource>
     </form>
 </body>
