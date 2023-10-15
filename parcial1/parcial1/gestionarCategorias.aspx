@@ -12,7 +12,7 @@
         <div>
             <asp:Label ID="Label1" runat="server" Text="Categorias Registradas"></asp:Label>
             <br />
-            <asp:ListBox ID="categoriasLB" runat="server" DataSourceID="SqlDataSourceCategorias" DataTextField="nombre" DataValueField="idDenunciaCategoria" Height="142px" Width="329px" AutoPostBack="True" OnSelectedIndexChanged="categoriasLB_SelectedIndexChanged"></asp:ListBox>
+            <asp:ListBox ID="categoriasLB" runat="server" DataSourceID="SqlDataSourceCategorias" DataTextField="nombre" DataValueField="id" Height="142px" Width="329px" AutoPostBack="True" OnSelectedIndexChanged="categoriasLB_SelectedIndexChanged"></asp:ListBox>
             <br />
             <asp:Button ID="eliminarBT" runat="server" OnClick="eliminarBT_Click" Text="Eliminar Categoria" />
             <br />
@@ -32,7 +32,7 @@
             <br />
             <br />
         </div>
-        <asp:SqlDataSource ID="SqlDataSourceCategorias" runat="server" ConnectionString="<%$ ConnectionStrings:IssdTP42023ConnectionString %>" DeleteCommand="DELETE FROM DenunciaCategorias WHERE (idDenunciaCategoria = @idDenunciaCategoria)" InsertCommand="INSERT INTO DenunciaCategorias(nombre) VALUES (@nombre)" SelectCommand="SELECT idDenunciaCategoria, nombre FROM DenunciaCategorias ORDER BY nombre" UpdateCommand="UPDATE DenunciaCategorias SET nombre = @nombre WHERE (idDenunciaCategoria = @idDenunciaCategoria)">
+        <asp:SqlDataSource ID="SqlDataSourceCategorias" runat="server" ConnectionString="<%$ ConnectionStrings:IssdTP42023ConnectionString %>" DeleteCommand="DELETE FROM DenunciaCategorias WHERE (id = @idDenunciaCategoria)" InsertCommand="INSERT INTO DenunciaCategorias(nombre) VALUES (@nombre)" SelectCommand="SELECT id, nombre FROM DenunciaCategorias ORDER BY nombre" UpdateCommand="UPDATE DenunciaCategorias SET nombre = @nombre WHERE (id = @idDenunciaCategoria)">
             <DeleteParameters>
                 <asp:ControlParameter ControlID="categoriasLB" Name="idDenunciaCategoria" PropertyName="SelectedValue" />
             </DeleteParameters>

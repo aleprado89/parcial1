@@ -104,7 +104,7 @@ namespace parcial1
             if (reader.Read())
             {
                 textoTB.Text = reader["texto"].ToString();
-                categoriaDDL.SelectedValue = reader["idDenunciaCategoria"].ToString();
+                categoriaDDL.SelectedValue = reader["id"].ToString();
             }
         }
     }
